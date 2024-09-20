@@ -127,3 +127,39 @@ function binarySearch(arr1, target){
     }
     
     binarySearch([1,2,3,6,7,4,19], 4)
+
+    // 소수 만들기
+    // 주어진 숫자중 서로다른 3개의 수를 더해 만들수있는 경우의 수 중에서 소수의 갯수를 찾아라
+    function solution(nums) {
+
+        const arr = []
+        for(let i = 0; i < nums.length; i ++){
+          for(let j = i+1; j < nums.length; j ++){
+            for(let k = j+1; k < nums.length; k++){
+              arr.push(nums[i] + nums[j] + nums[k])
+            }
+          }
+        }
+      
+        console.log(arr)
+      
+      
+        const answer = arr.filter(item => {
+          const temp = []
+          for(let i = 1; i <= Math.sqrt(item); i++){
+            if(item % i === 0){
+              temp.push(i)
+            } if(item % i === 0 && i !== item/i){
+              temp.push(item / i)
+            }
+          }
+          console.log(temp)
+
+          if(temp.length === 2){
+            return true
+          }
+        })
+        return answer.length
+        
+      }
+      solution([1,2,3,4])

@@ -182,5 +182,4 @@ const secretMap = (n, arr1, arr2) => {
 
   return answer
 }
-
 secretMap(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
